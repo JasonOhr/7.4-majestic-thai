@@ -18,16 +18,24 @@ var MenuView = Backbone.View.extend({
 
 var MenuItemView = Backbone.View.extend({
     template: JST.menuItem,
-
+    events: {
+        'click .menu-item': 'checkIt'
+    },
     initialize: function(){
 
         this.render()
     },
     render: function(){
-        console.log(this.collection.toJSON());
-        this.$el.html(this.template(this.collection.toJSON()));
+        console.log(this.model.toJSON());
+        this.$el.html(this.template(this.model.toJSON()));
+
+    },
+    checkIt: function(){
+        var hey = this.model.toJSON();
+        console.log(hey)
 
     }
+
 });
 
 export default {MenuView,MenuItemView};

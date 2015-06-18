@@ -3,6 +3,7 @@
  */
 import  {MenuView,MenuItemView} from './views/MenuItemView'
 import {MenuItemModel, MenuItemCollection} from './models/MenuItemModel';
+import MenuItemsView from './views/MenuItemsView'
 var Router = Backbone.Router.extend({
    routes: {
        '': 'index'
@@ -16,7 +17,7 @@ var Router = Backbone.Router.extend({
         $('.container').html(new MenuView().el);
 
         this.menuItemCollection.fetch().then(function(){
-            $('.menu').html(new MenuItemView({collection: this.menuItemCollection}).el);
+            $('.menu').html(new MenuItemsView({collection: this.menuItemCollection}).el);
         }.bind(this));
     }
 });
