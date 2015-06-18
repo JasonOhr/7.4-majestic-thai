@@ -1,0 +1,32 @@
+- [x] Setup the scaffolding and install Backbone
+- [x] Setup template for the different dynamic portion
+- [x] Produce static data for menu
+- [x] Produce a functional static mockup
+##Menu
+- [x] Fetch and clog JSON form menu
+- [x] render a template for each menu item (not according to template
+- [ ] Make a view Instance responsible instead of template for collection
+- [ ] Define a FoodListView const
+- [ ] 
+- [ ] render as children
+- [ ] Define a FoodItemView cons for each
+- [ ] clog FoodModel once pressed
+- [ ] Define Order Const
+- [ ] Create an instance of Order
+- [ ] Pass the order to child
+- [ ] clog the order when I click on food price
+- [ ] Add food model to order
+- [ ] Define a food CategoryView const
+- [ ] Make instances of FoodCategoryView 
+- [ ] Make an instance of FoodCategory for popularity
+
+#### Order view
+
+- [ ] Define order view constructor
+- [ ] Render said view
+- [ ] in OrderView 'clog order
+- [ ] in OrderView clog each time a food is pressed
+- [ ] Render this data
+- [ ] In Order define subtotal func that calcs total price
+- [ ] clog 
+- [ ] render

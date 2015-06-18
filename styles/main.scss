@@ -1,3 +1,4 @@
+$grid-columns: 6;
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 
@@ -6,16 +7,129 @@ $base-font-family: $helvetica;
 
 // Colors
 $blue: #477dca;
-$dark-gray: #333;
+$dark-gray: #485366;
 $medium-gray: #999;
 $light-gray: #ddd;
-$very-light-gray: #fafafa;
+$very-light-gray: #fcfcfc;
 
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
+$category-color: #6a7781;
+$paragraph-color: #778182;
+$h2-color: #485366;
+$price-color: #3498db;
+
+$border-color: #e8e8e8;
+
+$category-background-color: #f7f7f7;
+@mixin border(){
+  border: 1px solid $border-color;
+}
 body {
   font-family: $base-font-family;
   background-color: $base-background-color;
   color: $base-font-color;
+  font-size: 12px;
 }
+header {
+
+
+
+
+}
+.hero-image {
+  position:relative;
+  height: 250px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../images/bg-menu.svg');
+}
+.image-overlay {
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  background-color: $dark-gray;
+  opacity: .5;
+  top:0;
+}
+h1 {
+  margin: 0;
+}
+.container {
+  @include outer-container(980px);
+  margin-top: 20px;
+
+
+}
+.menu {
+  @include span-columns(4);
+  @include border();
+
+}
+.category {
+
+  color: $category-color;
+  background-color: $category-background-color;
+}
+.category-title,
+.menu-item,
+p{
+  border-bottom: 1px solid $border-color;
+}
+.category h1,
+p,
+.menu-item h2{
+  @include pad(20px default);
+}
+h1,
+h2{
+  font-weight: normal;
+}
+h1 {
+  font-size: 1.6em;
+}
+h2 {
+  font-size: 1.4em;
+}
+p {
+  color:$paragraph-color;
+  background-color: #fff;
+  margin: 0;
+
+}
+.category-description{
+  font-style: italic;
+  letter-spacing: .1em;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.menu-item {
+  height: 75px;
+  background-color: #fff;
+  width: 100%;
+
+  position: relative;
+}
+.menu-item h2 {
+  margin-top: 0;
+  color: $h2-color;
+  //display: inline-block;
+  //vertical-align: top;
+
+}
+.price {
+  padding:8px;
+  border-radius: 3px;
+  color: $price-color;
+  border: 1px solid #e0e0e0;
+  //float:right;
+  //display: inline-block;
+  //vertical-align: top;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+

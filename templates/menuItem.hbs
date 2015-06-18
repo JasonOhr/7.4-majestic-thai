@@ -1,0 +1,28 @@
+<!--<section class="category">-->
+    <!--<div class="category-title">-->
+        <!--<h1>category2</h1>-->
+    <!--</div>-->
+    <!--<p class="category-description">about the category</p>-->
+    <!--<section class="menu-item">-->
+        <!--<h2>menuNumber name</h2>-->
+
+        <!--<div class="price">price</div>-->
+    <!--</section>-->
+    <!--<section class="menu-item">-->
+        <!--<h2>menuNumber name</h2>-->
+        <!--<div class="price">price</div>-->
+    <!--</section>-->
+
+<!--</section>-->
+
+    {{# each this}}
+
+        <section class="menu-item">
+            <h2>{{menuNumber}} {{name}}</h2>
+            <div class="price">{{price}}</div>
+        </section>
+
+    {{/each}}
+
+
+
