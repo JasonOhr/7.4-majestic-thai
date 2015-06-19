@@ -1,10 +1,11 @@
 /**
  * Created by firewaterjoe on 6/18/15.
  */
+import {OrderModel,OrdersCollection} from '../models/OrderModel'
 
 var MenuView = Backbone.View.extend({
     template: JST.menu,
-    className: 'menu',
+    className: 'menu-page',
     tagName: 'section',
 
     initialize: function(){
@@ -23,16 +24,25 @@ var MenuItemView = Backbone.View.extend({
     },
     initialize: function(){
 
+        this.ordersCollection = new OrdersCollection();
+        this.orderModel = new OrderModel();
         this.render()
     },
     render: function(){
-        console.log(this.model.toJSON());
         this.$el.html(this.template(this.model.toJSON()));
 
     },
     checkIt: function(){
-        var hey = this.model.toJSON();
-        console.log(hey)
+        this.menuItem = this.model.toJSON();
+        //console.log('name',this.menuItem.name);
+        //console.log(this.orderModel);
+        this.orderModel.set({
+            name: this.menuItem.name,
+            price: this.menuItem.price
+        });
+        this.ordersCollection.set(this.orderModel);
+
+        console.log(this.ordersCollection);
 
     }
 

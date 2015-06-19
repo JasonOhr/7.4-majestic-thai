@@ -1,3 +1,4 @@
+import ajaxConfig from './ajax-config'
 import router from './router'
 
 (function(){
