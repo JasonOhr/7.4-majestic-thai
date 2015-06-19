@@ -8,6 +8,7 @@ export default Backbone.View.extend({
       this.render();
     },
     render: function(){
+        console.log('here',this.collection.each(groupBy('category')));
       this.renderChildren();
     },
     renderChildren: function(){
