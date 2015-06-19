@@ -22,10 +22,10 @@ var MenuItemView = Backbone.View.extend({
     events: {
         'click .menu-item': 'checkIt'
     },
-    initialize: function(){
+    initialize: function(options){
+        //console.log(options);
+        this.ordersCollection = options.ordersCollection;
 
-        this.ordersCollection = new OrdersCollection();
-        this.orderModel = new OrderModel();
         this.render()
     },
     render: function(){
@@ -33,6 +33,7 @@ var MenuItemView = Backbone.View.extend({
 
     },
     checkIt: function(){
+        this.orderModel = new OrderModel();
         this.menuItem = this.model.toJSON();
         //console.log('name',this.menuItem.name);
         //console.log(this.orderModel);
@@ -40,9 +41,9 @@ var MenuItemView = Backbone.View.extend({
             name: this.menuItem.name,
             price: this.menuItem.price
         });
-        this.ordersCollection.set(this.orderModel);
+        this.ordersCollection.add(this.orderModel);
 
-        console.log(this.ordersCollection);
+        //console.log(this.ordersCollection);
 
     }
 

@@ -3,7 +3,8 @@
  */
 import {MenuItemView} from './MenuItemView'
 export default Backbone.View.extend({
-    initialize: function(){
+    initialize: function(options){
+        this.ordersCollection = options.ordersCollection;
       this.render();
     },
     render: function(){
@@ -14,7 +15,8 @@ export default Backbone.View.extend({
 
         this.children = this.collection.map(function(child) {
             var view = new MenuItemView({
-                model: child
+                model: child,
+                ordersCollection:this.ordersCollection
             });
             this.$el.append(view.el);
             return view;

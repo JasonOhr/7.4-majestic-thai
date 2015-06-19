@@ -93,10 +93,12 @@ h1 {
 h2 {
   font-size: 1.4em;
 }
-p {
+.category-description p,
+p{
   color:$paragraph-color;
   background-color: #fff;
   margin: 0;
+
 
 }
 .category-description{
@@ -105,19 +107,48 @@ p {
   font-size: 1.2em;
   font-weight: 200;
 }
+
 .menu-item {
-  height: 75px;
   background-color: #fff;
   width: 100%;
-
+  //margin-bottom: 1px;
   position: relative;
 }
+.menu-item:hover,
+.menu-item:hover p{
+  background-color: $light-gray;
+}
+//.menu-item:hover {
+//  border-bottom:none;
+//  outline: 1px solid $medium-gray;
+//  outline-style: inset;
+//
+//}
+.menu-item:hover .price{
+  background-color: #fff;
+  //border-color: $h2-color;
+}
+.menu-item:active .price{
+  background-color: $price-color;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
 .menu-item h2 {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
   color: $h2-color;
   //display: inline-block;
   //vertical-align: top;
 
+}
+.menu-description {
+  padding: 25px;
+  width: 80%;
+}
+.menu-description p {
+  padding: 5px 0;
+  border: none;
 }
 .price {
   padding:8px;
@@ -143,11 +174,22 @@ p {
   color: $h2-color;
 }
 .order-item,
+.order-price,
 .subtotal-label{
   @include span-columns(1 of 2);
+
 }
 .subtotal-line {
-  border-top: 1px solid $border-color;
-  padding-top: 15px;
+  @include span-columns(2 of 2);
+  border-top: 1px solid $medium-gray;
+  margin-top: 15px;
 }
+.order-list {
+  @include span-columns(2 of 2);
+  padding-bottom: 5px;
+  border-top: 1px solid $border-color;
 
+}
+.order-list:hover {
+  background-color: $light-gray;
+}

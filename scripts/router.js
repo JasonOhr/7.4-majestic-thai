@@ -19,7 +19,10 @@ var Router = Backbone.Router.extend({
 
         this.menuItemCollection.fetch().then(function(){
 
-            $('.menu').html(new MenuItemsView({collection: this.menuItemCollection}).el);
+            $('.menu').html(new MenuItemsView({
+                collection: this.menuItemCollection,
+                ordersCollection: this.ordersCollection
+            }).el);
             $('.order-section').html(new OrderView({collection: this.ordersCollection}).el)
         }.bind(this));
     }

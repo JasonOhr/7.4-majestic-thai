@@ -4,12 +4,18 @@
     <!--</div>-->
     <!--<p class="category-description">about the category</p>-->
     <!--<section class="menu-item">-->
-        <!--<h2>menuNumber name</h2>-->
+        <!--<div class="menu-description">-->
+            <!--<h2>menuNumber name</h2>-->
+            <!--<p>description</p>-->
+        <!--</div>-->
 
         <!--<div class="price">price</div>-->
     <!--</section>-->
     <!--<section class="menu-item">-->
-        <!--<h2>menuNumber name</h2>-->
+        <!--<div class="menu-description">-->
+            <!--<h2>menuNumber name</h2>-->
+            <!--<p>description</p>-->
+        <!--</div>-->
         <!--<div class="price">price</div>-->
     <!--</section>-->
 
@@ -18,8 +24,11 @@
 
 
         <section class="menu-item">
+            <div class="menu-description">
             <h2>{{menuNumber}} {{name}}</h2>
-            <div class="price">{{price}}</div>
+            <p>{{description}}</p>
+            </div>
+            <div class="price">{{toDecimal price}}</div>
         </section>
 
 
