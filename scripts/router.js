@@ -3,7 +3,7 @@
  */
 import  {MenuView,MenuItemView} from './views/MenuItemView'
 import {MenuItemModel, MenuItemCollection} from './models/MenuItemModel';
-import MenuItemsView from './views/MenuItemsView';
+import MenuItemsView from './views/menuItemsView';
 import OrderView from './views/OrderView'
 import {OrdersCollection} from './models/OrderModel';
 var Router = Backbone.Router.extend({
