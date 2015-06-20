@@ -1,7 +1,7 @@
 /**
  * Created by firewaterjoe on 6/19/15.
  */
-import {MenuItemsView} from './MenuItemsView'
+import {MenuItemView} from './MenuItemView'
 export default Backbone.View.extend({
     template: JST.categories,
     initialize: function(options){
@@ -23,18 +23,21 @@ export default Backbone.View.extend({
         this.$el.append(JST['categories']({
             'category' : category
         }));
-        this.collection = new Backbone.Collection(items);
-        this.renderChildren();
+        console.log('in cat',category);
+        this.renderChildren(items).bind(this);
     },
-    renderChildren: function(){
+    renderChildren: function(items){
+        var newCollection = new Backbone.Collection(items);
         _.invoke(this.children || [], 'remove');
-        console.log('items',this.collection);
-        this.children = this.collection.map(function(child) {
-            var view = new MenuItemsView({
+        console.log('again',newCollection);
+        this.children = newCollection.map(function(child) {
+            console.log(child);
+            var view = new MenuItemView({
                 model: child,
                 ordersCollection:this.ordersCollection
             });
-            this.$('.category-description').append(view.el);
+            console.log('this',this);
+            this.$el.append(view.el);
             return view;
         }.bind(this));
 
