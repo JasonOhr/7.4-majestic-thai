@@ -12,8 +12,9 @@ export default Backbone.View.extend({
     },
     renderChildren: function(){
         _.invoke(this.children || [], 'remove');
-
+        console.log('1',this.collection);
         this.children = this.collection.map(function(child) {
+            console.log('2',child);
             var view = new MenuItemView({
                 model: child,
                 ordersCollection:this.ordersCollection
