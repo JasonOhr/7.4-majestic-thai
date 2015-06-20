@@ -1,7 +1,7 @@
 /**
  * Created by firewaterjoe on 6/18/15.
  */
-import {MenuItemsView} from './MenuItemsView'
+import {MenuItemView} from './MenuItemView'
 export default Backbone.View.extend({
     initialize: function(options){
         this.ordersCollection = options.ordersCollection;
@@ -13,7 +13,7 @@ export default Backbone.View.extend({
     },
     renderChildren: function(){
         _.invoke(this.children || [], 'remove');
-            ;
+
         this.children = this.collection.map(function(child) {
             console.log(child);
             var view = new MenuItemView({
