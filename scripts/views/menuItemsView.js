@@ -1,20 +1,21 @@
 /**
  * Created by firewaterjoe on 6/18/15.
  */
-import {MenuItemView} from './MenuItemView'
+import {MenuItemsView} from './MenuItemsView'
 export default Backbone.View.extend({
     initialize: function(options){
         this.ordersCollection = options.ordersCollection;
       this.render();
     },
     render: function(){
-        console.log('here',this.collection.each(groupBy('category')));
+        console.log('wow',this.collection.each(groupBy('category')));
       this.renderChildren();
     },
     renderChildren: function(){
         _.invoke(this.children || [], 'remove');
-
+            ;
         this.children = this.collection.map(function(child) {
+            console.log(child);
             var view = new MenuItemView({
                 model: child,
                 ordersCollection:this.ordersCollection
