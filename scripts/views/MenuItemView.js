@@ -23,13 +23,14 @@ var MenuItemView = Backbone.View.extend({
         'click .menu-item': 'checkIt'
     },
     initialize: function(options){
-        //console.log(options);
+        console.log(options);
         this.ordersCollection = options.ordersCollection;
 
         this.render()
     },
     render: function(){
         this.$el.html(this.template(this.model.toJSON()));
+        console.log('howdy');
 
     },
     checkIt: function(){
