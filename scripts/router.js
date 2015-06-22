@@ -8,6 +8,7 @@ import OrderView from './views/OrderView'
 import {OrdersCollection} from './models/OrderModel';
 import CategoriesView from './views/CategoriesView';
 import CategoryView from './views/CategoryView';
+import PopularView from './views/PopularView'
 var Router = Backbone.Router.extend({
    routes: {
        '': 'index'
@@ -21,15 +22,16 @@ var Router = Backbone.Router.extend({
         $('.container').html(new MenuView().el);
 
         this.menuItemCollection.fetch().then(function(){
+            $('.menu').html(new PopularView({
+
+                collection: this.menuItemCollection,
+                ordersCollection: this.ordersCollection
+            }).el);
              $('.popular').append(new CategoriesView({
 
                      collection: this.menuItemCollection,
                      ordersCollection: this.ordersCollection
                  }).el);
-            //$('.menu').html(new MenuItemsView({
-            //    collection: this.menuItemCollection,
-            //    ordersCollection: this.ordersCollection
-            //}).el);
             $('.order-section').html(new OrderView({collection: this.ordersCollection}).el)
         }.bind(this));
     }

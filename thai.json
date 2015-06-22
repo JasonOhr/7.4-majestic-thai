@@ -4,118 +4,136 @@
     "name": "Vegetable Delight (Lunch)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 5
   },
   {
     "menuNumber": "L2",
     "name": "CASHEW NUT (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 6
   },
   {
     "menuNumber": "L3",
     "name": "PEPPER & GARLIC (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 20
   },
   {
     "menuNumber": "L4",
     "name": "SWEET & SOUR (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 10
   },
   {
     "menuNumber": "L5",
     "name": "GINGER AND MUSHROOM (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 43
+
   },
   {
     "menuNumber": "L6",
     "name": "HOT BASIL (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 6
   },
   {
     "menuNumber": "L7",
     "name": "TERIYAKI (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered":34
   },
   {
     "menuNumber": "L8",
     "name": "PRIK KHING (GREEN BEANS) (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered":23
   },
   {
     "menuNumber": "L9",
     "name": "ORANGE CHICKEN (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 54
   },
   {
     "menuNumber": "L10",
     "name": "BABY CORN WITH MUSHROOMS (LUNCH)",
     "description": "",
     "price": 699,
-    "category": "A La Carte Lunch"
+    "category": "A La Carte Lunch",
+    "timesOrdered": 43
   },
   {
     "menuNumber": "40",
     "name": "GREEN CURRY",
     "description": "Zucchini, eggplant, green beans and basil leaves, simmered in a spicy green curry paste with coconut milk.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 41
   },
   {
     "menuNumber": "41",
     "name": "RED CURRY",
     "description": "Bell peppers, bamboo shoots, eggplant and basil leaves. This is simmered in a red curry paste with coconut milk.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 20
   },
   {
     "menuNumber": "42",
     "name": "YELLOW CURRY",
     "description": "Mild yellow curry, containing rich flavors of curry powder, coconut milk, potatoes, onions and carrots.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 12
   },
   {
     "menuNumber": "43",
     "name": "PA-NENG CURRY",
     "description": "Sweet thick paste of pa-neng curry, coconut milk, bell peppers and basil leaves.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 26
   },
   {
     "menuNumber": "44",
     "name": "MASSAMAN CURRY",
     "description": "This is a favorite Thai curry with potatoes, onions, and peanuts in coconut milk.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 65
   },
   {
     "menuNumber": "45",
     "name": "PINEAPPLE CURRY",
     "description": "Diced pineapples, bell peppers, basil leaves, in spicy Thai red curry paste.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 44
   },
   {
     "menuNumber": "46",
     "name": "JUNGLE CURRY (NO COCONUT MILK)",
     "description": "With bell peppers, green beans, squash, bamboo shoots, basil, mushrooms, baby corn, all cooked with jungle curry paste.",
     "price": 950,
-    "category": "Curry"
+    "category": "Curry",
+    "timesOrdered": 12
   }
 ]

@@ -35,6 +35,7 @@ var MenuItemView = Backbone.View.extend({
     checkIt: function(){
         this.orderModel = new OrderModel();
         this.menuItem = this.model.toJSON();
+        var upOne = (this.menuItem.timesOrdered) + 1;
 
         this.orderModel.set({
             name: this.menuItem.name,

@@ -86,17 +86,17 @@ p{
 .category h1,
 p,
 .menu-item h2{
-  @include pad(20px default);
+  @include pad(15px default);
 }
 h1,
 h2{
   font-weight: normal;
 }
 h1 {
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 h2 {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 .category-description p,
 p{
@@ -117,7 +117,7 @@ p{
   font-weight: bold;
   position: absolute;
   right: 25px;
-  top: 15px;
+  top: 8px;
 }
 
 .menu-item {
@@ -144,12 +144,12 @@ p{
   margin: 0;
   padding: 0;
   color: $h2-color;
-  font-size: 1.3em;
+  font-size: 1.2em;
 
 
 }
 .menu-description {
-  padding: 25px;
+  padding: 15px 35px 13px;
   width: 80%;
 }
 .menu-description p {
@@ -161,12 +161,9 @@ p{
   border-radius: 3px;
   color: $price-color;
   border: 1px solid #e0e0e0;
-  //float:right;
-  //display: inline-block;
-  //vertical-align: top;
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 10px;
 }
 
 
