@@ -1,3 +1,4 @@
+$grid-columns: 6;
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 
@@ -6,16 +7,204 @@ $base-font-family: $helvetica;
 
 // Colors
 $blue: #477dca;
-$dark-gray: #333;
+$dark-gray: #485366;
 $medium-gray: #999;
 $light-gray: #ddd;
-$very-light-gray: #fafafa;
+$very-light-gray: #fcfcfc;
 
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
+$category-color: #6a7781;
+$paragraph-color: #778182;
+$h2-color: #485366;
+$price-color: #3498db;
+
+$border-color: #e8e8e8;
+
+$category-background-color: #f7f7f7;
+@mixin border(){
+  border: 1px solid $border-color;
+}
 body {
   font-family: $base-font-family;
   background-color: $base-background-color;
   color: $base-font-color;
+  font-size: 12px;
+}
+header {
+
+
+
+
+}
+.hero-image {
+  position:relative;
+  height: 250px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../images/bg-menu.svg');
+}
+.image-overlay {
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  background-color: $dark-gray;
+  opacity: .5;
+  top:0;
+}
+h1 {
+  margin: 0;
+}
+.container {
+  @include outer-container(980px);
+  margin-top: 20px;
+
+
+}
+.menu {
+  @include span-columns(4);
+  @include border();
+
+}
+ .category-title {
+
+  color: $category-color;
+  background-color: $category-background-color;
+   position: relative;
+}
+.category-title,
+.menu-item,
+p{
+  border-bottom: 1px solid $border-color;
+}
+.hidden {
+  display: none;
+}
+.popular h1,
+.category h1,
+p,
+.menu-item h2{
+  @include pad(15px default);
+}
+h1,
+h2{
+  font-weight: normal;
+}
+h1 {
+  font-size: 1.3em;
+}
+h2 {
+  font-size: 1.1em;
+}
+.category-description p,
+p{
+  color:$paragraph-color;
+  background-color: #fff;
+  margin: 0;
+
+
+}
+.category-description{
+  font-style: italic;
+  letter-spacing: .1em;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.drop-down {
+  font-size: 2em;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 8px;
+}
+
+.menu-item {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  //display: none;
+}
+.menu-item:hover,
+.menu-item:hover p{
+  background-color: $light-gray;
+}
+
+.menu-item:hover .price{
+  background-color: #fff;
+}
+.menu-item:active .price{
+  background-color: $price-color;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+.menu-item h2 {
+  margin: 0;
+  padding: 0;
+  color: $h2-color;
+  font-size: 1.2em;
+
+
+}
+.menu-description {
+  padding: 15px 35px 13px;
+  width: 80%;
+}
+.menu-description p {
+  padding: 5px 0;
+  border: none;
+}
+.price {
+  padding:8px;
+  border-radius: 3px;
+  color: $price-color;
+  border: 1px solid #e0e0e0;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+
+/*
+==================  Order Section==========
+*/
+.order-section{
+  @include span-columns(2);
+  @include border();
+  @include pad(30px);
+  background-color: #fff;
+  color: $h2-color;
+}
+.order-item,
+.order-price,
+.subtotal-label{
+  @include span-columns(1 of 2);
+
+}
+.subtotal-line {
+  @include span-columns(2 of 2);
+  border-top: 1px solid $medium-gray;
+  margin-top: 15px;
+}
+.order-item-list{
+  @include span-columns(2 of 2)
+}
+.order-list {
+  @include span-columns(2 of 2);
+  padding: 10px 0;
+  border-top: 1px solid $border-color;
+  position: relative;
+
+}
+.order-list:hover {
+  background-color: $light-gray;
+}
+.remove-item {
+  position: absolute;
+  color:darkred;
+  font-weight: bold;
+  right: 10px;
+  cursor: pointer;
 }
