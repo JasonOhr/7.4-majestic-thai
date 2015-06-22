@@ -1,22 +1,27 @@
 /**
- * Created by firewaterjoe on 6/18/15.
+ * Created by firewaterjoe on 6/19/15.
  */
 import {MenuItemView} from './MenuItemView'
 export default Backbone.View.extend({
-    //template: JST.categories,
+    template: JST.categories,
+    events: {
+        'click .category-title': 'hideItems'
+    },
     initialize: function(options){
-        this.ordersCollection = options.ordersCollection;
         this.category = options.category;
-        console.log(this.category);
+        this.ordersCollection = options.ordersCollection;
         this.render();
+        //console.log(options);
     },
     render: function(){
-        //this.$el.append(this.template(this.category));
+        //console.log('duh',this.categories);
+        this.$el.html(JST['categories']({
+            'category':this.category
+        }));
         this.renderChildren();
-    },
-    renderChildren: function(){
+    },renderChildren: function(){
         _.invoke(this.children || [], 'remove');
-        console.log('1',this.collection);
+
         this.children = this.collection.map(function(child) {
 
             var view = new MenuItemView({
@@ -24,7 +29,7 @@ export default Backbone.View.extend({
                 ordersCollection:this.ordersCollection
             });
             this.$el.append(view.el);
-            console.log(view);
+            //  console.log(view);
             return view;
         }.bind(this));
 
@@ -34,5 +39,11 @@ export default Backbone.View.extend({
     remove: function(){
         _.invoke(this.children || [], 'remove');
         Backbone.View.prototype.remove.apply(this, arguments);
+    },
+    hideItems: function(){
+        this.$('.menu-item, p.category-description').toggleClass('hidden');
     }
+
+
+
 });

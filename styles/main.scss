@@ -68,15 +68,19 @@ h1 {
   @include border();
 
 }
-.category {
+ .category-title {
 
   color: $category-color;
   background-color: $category-background-color;
+   position: relative;
 }
 .category-title,
 .menu-item,
 p{
   border-bottom: 1px solid $border-color;
+}
+.hidden {
+  display: none;
 }
 .category h1,
 p,
@@ -107,26 +111,27 @@ p{
   font-size: 1.2em;
   font-weight: 200;
 }
+.drop-down {
+  font-size: 2em;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
 
 .menu-item {
   background-color: #fff;
   width: 100%;
-  //margin-bottom: 1px;
   position: relative;
+  //display: none;
 }
 .menu-item:hover,
 .menu-item:hover p{
   background-color: $light-gray;
 }
-//.menu-item:hover {
-//  border-bottom:none;
-//  outline: 1px solid $medium-gray;
-//  outline-style: inset;
-//
-//}
+
 .menu-item:hover .price{
   background-color: #fff;
-  //border-color: $h2-color;
 }
 .menu-item:active .price{
   background-color: $price-color;
@@ -138,8 +143,8 @@ p{
   margin: 0;
   padding: 0;
   color: $h2-color;
-  //display: inline-block;
-  //vertical-align: top;
+  font-size: 1.3em;
+
 
 }
 .menu-description {
@@ -162,6 +167,7 @@ p{
   right: 20px;
   top: 20px;
 }
+
 
 /*
 ==================  Order Section==========
