@@ -1,0 +1,41 @@
+/**
+ * Created by firewaterjoe on 6/22/15.
+ */
+/**
+ * Created by firewaterjoe on 6/18/15.
+ */
+import {OrderModel,OrdersCollection} from '../models/OrderModel'
+
+
+
+var PopularItemView = Backbone.View.extend({
+    template: JST.menuItem,
+    events: {
+        'click .menu-item': 'checkIt'
+        //'click .category-title': 'dude'
+    },
+    initialize: function(options){
+        //console.log(options);
+        this.ordersCollection = options.ordersCollection;
+
+        this.render()
+    },
+    render: function(){
+        this.$el.html(this.template(this.model.toJSON()));
+    },
+    checkIt: function(){
+        this.orderModel = new OrderModel();
+        this.menuItem = this.model.toJSON();
+        var upOne = (this.menuItem.timesOrdered) + 1;
+
+        this.orderModel.set({
+            name: this.menuItem.name,
+            price: this.menuItem.price
+        });
+        this.ordersCollection.add(this.orderModel);
+    }
+
+
+});
+
+export default {MenuView,MenuItemView};

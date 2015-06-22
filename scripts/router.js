@@ -27,7 +27,7 @@ var Router = Backbone.Router.extend({
                 collection: this.menuItemCollection,
                 ordersCollection: this.ordersCollection
             }).el);
-             $('.popular').append(new CategoriesView({
+             $('.popular').after(new CategoriesView({
 
                      collection: this.menuItemCollection,
                      ordersCollection: this.ordersCollection
