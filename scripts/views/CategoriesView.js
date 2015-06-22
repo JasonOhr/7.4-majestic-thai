@@ -19,9 +19,6 @@ export default Backbone.View.extend({
                 category:category,
                 ordersCollection: this.ordersCollection
             }).el);
-
-
-
         }.bind(this));
 
     }

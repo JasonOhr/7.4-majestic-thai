@@ -6,7 +6,9 @@ export default Backbone.View.extend({
     template: JST.orderSubtotal,
    initialize: function(){
        this.listenTo(this.collection, 'update',this.render);
-       //console.log('try orderV: ',options);
+       //this listenTo adds the items to the list
+       this.listenTo(this.collection, "update", this.subTotal);
+       //this listenTo gets the subtotal from the collection and displays it
        this.render();
    },
     render: function(){
@@ -17,10 +19,7 @@ export default Backbone.View.extend({
 
 
         _.invoke(this.children || [], 'remove');
-        console.log('in renderC(): ',this.collection);
-        console.log('these children',this.children);
         this.children = this.collection.map(function(child){
-            console.log("in Map: ",child);
             var view = new OrderView({
                 model: child,
                 collection: this.collection
@@ -33,5 +32,9 @@ export default Backbone.View.extend({
     remove: function(){
         _.invoke(this.children || [], 'remove');
         Backbone.View.prototype.remove.apply(this,arguments);
+    },
+    subTotal: function(){
+        $('.subtotal-line').html(JST['subtotalLine'](this.collection ));
+        this.renderChildren();
     }
 });
