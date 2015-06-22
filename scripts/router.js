@@ -30,7 +30,7 @@ var Router = Backbone.Router.extend({
             //    collection: this.menuItemCollection,
             //    ordersCollection: this.ordersCollection
             //}).el);
-            //$('.order-section').html(new OrderView({collection: this.ordersCollection}).el)
+            $('.order-section').html(new OrderView({collection: this.ordersCollection}).el)
         }.bind(this));
     }
 });

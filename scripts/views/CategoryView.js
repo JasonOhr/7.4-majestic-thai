@@ -4,13 +4,17 @@
 import {MenuItemView} from './MenuItemView'
 export default Backbone.View.extend({
     template: JST.categories,
+    events: {
+        'click .category-title': 'hideItems'
+    },
     initialize: function(options){
         this.category = options.category;
+        this.ordersCollection = options.ordersCollection;
         this.render();
-        console.log(options);
+        //console.log(options);
     },
     render: function(){
-        console.log('duh',this.categories);
+        //console.log('duh',this.categories);
         this.$el.html(JST['categories']({
             'category':this.category
         }));
@@ -19,13 +23,13 @@ export default Backbone.View.extend({
         _.invoke(this.children || [], 'remove');
 
         this.children = this.collection.map(function(child) {
-            //console.log(child);
+
             var view = new MenuItemView({
                 model: child,
                 ordersCollection:this.ordersCollection
             });
             this.$el.append(view.el);
-            console.log(view);
+            //  console.log(view);
             return view;
         }.bind(this));
 
@@ -35,6 +39,11 @@ export default Backbone.View.extend({
     remove: function(){
         _.invoke(this.children || [], 'remove');
         Backbone.View.prototype.remove.apply(this, arguments);
+    },
+    hideItems: function(){
+        this.$('.menu-item, p.category-description').toggleClass('hidden');
     }
+
+
 
 });

@@ -14,7 +14,7 @@ export default Backbone.View.extend({
     subTotal: function(){
         //console.log(this.collection.subtotal);
         this.render();
-        console.log(this.collection);
+        //console.log(this.collection);
         $('.order-item-line').after(JST['orderSummary'](this.collection.toJSON() ));
 
 
