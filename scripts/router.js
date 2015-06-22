@@ -21,7 +21,7 @@ var Router = Backbone.Router.extend({
         $('.container').html(new MenuView().el);
 
         this.menuItemCollection.fetch().then(function(){
-             $('.menu').html(new CategoriesView({
+             $('.popular').append(new CategoriesView({
 
                      collection: this.menuItemCollection,
                      ordersCollection: this.ordersCollection
