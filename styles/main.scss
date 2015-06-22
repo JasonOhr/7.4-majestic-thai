@@ -170,7 +170,7 @@ p{
 /*
 ==================  Order Section==========
 */
-.order-section {
+.order-section{
   @include span-columns(2);
   @include border();
   @include pad(30px);
@@ -188,12 +188,23 @@ p{
   border-top: 1px solid $medium-gray;
   margin-top: 15px;
 }
+.order-item-list{
+  @include span-columns(2 of 2)
+}
 .order-list {
   @include span-columns(2 of 2);
-  padding-bottom: 5px;
+  padding: 10px 0;
   border-top: 1px solid $border-color;
+  position: relative;
 
 }
 .order-list:hover {
   background-color: $light-gray;
+}
+.remove-item {
+  position: absolute;
+  color:darkred;
+  font-weight: bold;
+  right: 10px;
+  cursor: pointer;
 }

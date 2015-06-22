@@ -4,7 +4,7 @@
 import  {MenuView,MenuItemView} from './views/MenuItemView'
 import {MenuItemModel, MenuItemCollection} from './models/MenuItemModel';
 import MenuItemsView from './views/MenuItemsView';
-import OrderView from './views/OrderView'
+import OrdersView from './views/OrdersView'
 import {OrdersCollection} from './models/OrderModel';
 import CategoriesView from './views/CategoriesView';
 import CategoryView from './views/CategoryView';
@@ -32,7 +32,10 @@ var Router = Backbone.Router.extend({
                      collection: this.menuItemCollection,
                      ordersCollection: this.ordersCollection
                  }).el);
-            $('.order-section').html(new OrderView({collection: this.ordersCollection}).el)
+            $('.order-section').html(new OrdersView({
+                collection: this.ordersCollection,
+                menuItemCollection: this.menuItemCollection
+            }).el)
         }.bind(this));
     }
 });
